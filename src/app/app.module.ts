@@ -8,6 +8,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { Ionic4DatepickerModule } from '@logisticinfotech/ionic4-datepicker';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,6 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
+    Ionic4DatepickerModule,
     AppRoutingModule
   ],
   providers: [

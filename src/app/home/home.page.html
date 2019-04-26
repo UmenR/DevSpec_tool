@@ -9,36 +9,108 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-    <ion-card class="welcome-card">
-      <ion-img src="/assets/shapes.svg"></ion-img>
-      <ion-card-header>
-        <ion-card-subtitle>Get Started</ion-card-subtitle>
-        <ion-card-title>Welcome to Ionic</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <p>Now that your app has been created, you'll want to start building out features and components. Check out some of the resources below for next steps.</p>
-      </ion-card-content>
-    </ion-card>
-    <ion-list lines="none">
-      <ion-list-header>
-        <ion-label>Resources</ion-label>
-      </ion-list-header>
-      <ion-item href="https://ionicframework.com/docs/">
-        <ion-icon slot="start" color="medium" name="book"></ion-icon>
-        <ion-label>Ionic Documentation</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/building/scaffolding">
-        <ion-icon slot="start" color="medium" name="build"></ion-icon>
-        <ion-label>Scaffold Out Your App</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/layout/structure">
-        <ion-icon slot="start" color="medium" name="grid"></ion-icon>
-        <ion-label>Change Your App Layout</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/theming/basics">
-        <ion-icon slot="start" color="medium" name="color-fill"></ion-icon>
-        <ion-label>Theme Your App</ion-label>
-      </ion-item>
-    </ion-list>
-</ion-content>
+<ion-content class="background">
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label position="floating">Subreddit</ion-label>
+                    <ion-input placeholder="r/"></ion-input>
+                </ion-item>
+            </ion-col>
+          <ion-col>
+              <ion-item class='floatingwithicon'>
+                  <ion-label position="floating" >Start Date</ion-label>
+                  <ion-icon name="calendar" class='calicon' slot="end"></ion-icon>
+                  <ion-input
+                    readonly
+                    [(ngModel)]="beforedate"
+                    (ionChange)="onChangeDateBefore()"
+                    [liIonic4Datepicker]="datePickerObjBefore"
+                  ></ion-input>
+                </ion-item>
+          </ion-col>
+          <ion-col>
+              <ion-item class='floatingwithicon'>
+                  <ion-label position="floating" >End Date</ion-label>
+                  <ion-icon name="calendar" class='calicon' slot="end"></ion-icon>
+                  <ion-input
+                    readonly
+                    [(ngModel)]="afterdate"
+                    (ionChange)="onChangeDateAfter()"
+                    [liIonic4Datepicker]="datePickerObjAfter"
+                  ></ion-input>
+                </ion-item>
+          </ion-col>
+          <ion-col>
+              <ion-item class='floatingwithicon'>
+                  <ion-label position="floating" >Discussions Per Summary</ion-label>
+                  <ion-icon name="cog" class='calicon' slot="end"></ion-icon>
+                  <ion-input fill="outline"></ion-input>
+                </ion-item>
+          </ion-col>
+        </ion-row>
+          <ion-row>
+              <ion-col>
+                  <ion-card>
+                      <ion-card-header>
+                        <ion-card-subtitle>Topic 1</ion-card-subtitle>
+                        <ion-card-title>
+                            <ion-input placeholder="Enter Input"></ion-input>
+                        </ion-card-title>
+                      </ion-card-header>
+                    
+                      <ion-card-content>
+                          <ion-item>
+                              <ion-textarea placeholder="Keywords"></ion-textarea>
+                            </ion-item>
+                      </ion-card-content>
+                    </ion-card>
+              </ion-col>
+              <ion-col>
+                  <ion-card>
+                      <ion-card-header>
+                        <ion-card-subtitle>Topic 1</ion-card-subtitle>
+                        <ion-card-title>
+                            <ion-input placeholder="Enter Input"></ion-input>
+                        </ion-card-title>
+                      </ion-card-header>
+                    
+                      <ion-card-content>
+                          <ion-item>
+                              <ion-textarea placeholder="Keywords"></ion-textarea>
+                            </ion-item>
+                      </ion-card-content>
+                    </ion-card>
+              </ion-col>
+              <ion-col>
+                  <ion-card>
+                      <ion-card-header>
+                        <ion-card-subtitle>Topic 1</ion-card-subtitle>
+                        <ion-card-title>
+                            <ion-input placeholder="Enter Input"></ion-input>
+                        </ion-card-title>
+                      </ion-card-header>
+                    
+                      <ion-card-content>
+                          <ion-item>
+                              <ion-textarea placeholder="Keywords"></ion-textarea>
+                            </ion-item>
+                      </ion-card-content>
+                    </ion-card>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+
+              </ion-col>
+              <ion-col>
+                <ion-button class="background" size="large" expand="full">Add Topic</ion-button>
+              </ion-col>
+              <ion-col>
+                
+              </ion-col>
+            </ion-row>
+    </ion-grid>
+  
+  </ion-content>
