@@ -55,13 +55,13 @@ The following image shows the mockup of the tools query information page
 In order to get the best results from DevSpec the users must first make sure the categories that has been defined are properly interpreted by the tool. This can be easily done by looking at the topic interpretation graph and by inspecting the word-clouds  generated for each topic. Both the graph and the word-clouds will be presented to the user after the analysis. a sample output of the graph is shown below.
 
 
-![Image of tool](https://github.com/UmenR/DevSpec_frontend/blob/master/DocImages/topicscores.PNG)
+![Image of tool](https://raw.githubusercontent.com/UmenR/DevSpec_frontend/master/DocImages/topicscores.PNG)
 
 According to this graph we can see that categories 2 and 3 have low interpretation scores while categories 0,1 and 4 have high interpretation scores. This will mean that the discussions categorized under category 2 and 3 will not be as accurate compared to discussion categorized under category 0,1 and 4. This can be further analyzed by comparing the word clouds that are generated from the most probable words per each category.  
 
 | category 4 Maps  | category 3 Sounds |
 | ------------- | ------------- |
-| ![Image of tool](https://github.com/UmenR/DevSpec_frontend/blob/master/DocImages/topic4wc.PNG)  | ![Image of tool](https://github.com/UmenR/DevSpec_frontend/blob/master/DocImages/topic3wc.PNG)  |
+| ![Image of tool](https://raw.githubusercontent.com/UmenR/DevSpec_frontend/master/DocImages/topic4wc.PNG)  | ![Image of tool](https://raw.githubusercontent.com/UmenR/DevSpec_frontend/master/DocImages/topic3wc.PNG)  |
 
 From the table above we can see that the most probable words in the **category 4** word cloud represents the topic Maps **very well** while the **category 3** word cloud **does not represent** the topic Sounds. To increase the interpretation of the categories, the user must either define a different categories or provide more informative keywords for each category
 
@@ -71,7 +71,7 @@ If all the categories have satisfactory interpretation scores the user can then 
 ### 4. View the Results 
 The results will be presented to the user according to the following mockup.
 
-![Image of tool](https://github.com/UmenR/DevSpec_frontend/blob/master/DocImages/viewresultpage.PNG)
+![Image of tool](https://raw.githubusercontent.com/UmenR/DevSpec_frontend/master/DocImages/viewresultpage.PNG)
 
 ## Technologies used in DevSpec
 
@@ -82,7 +82,7 @@ For the summarization component a simple scoring algorithm has been implemented.
 Once this sentence has been created all other sentences found in discussions will be scored according to the cosine similarity between the constructed topic sentence and the target sentence. This approach combined with other summarization methods such as clustering for reducing redundancy and sentence selection from unique sections in the document etc. will be used to create the final summary for each discussion. A descriptive flow of logic of the algorithm is shown below.
 
 
-![Image of tool](https://github.com/UmenR/DevSpec_frontend/blob/master/DocImages/logic.jpg)
+![Image of tool](https://raw.githubusercontent.com/UmenR/DevSpec_frontend/master/DocImages/logic.jpg)
 
 
 
