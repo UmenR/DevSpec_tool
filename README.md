@@ -1,6 +1,6 @@
 # DevSpec
 ## About DevSpec
-DevSpec is a feedback analysis tool built specifically for capturing feedback about video games from public discussion forums. DevSpec is built to assist the development process by allowing the development teams to identify dificulties faced by the players such as performance issues, bugs and imbalences along with other useful information such suggestions and requests posted on public discussion forums by players.The current version of the DevSpec tool is only integrated with **Reddit** and is capable of performing the following tasks,
+DevSpec is a feedback analysis tool built specifically for capturing feedback about video games from public discussion forums. DevSpec is built to assist the development process by allowing the development teams to identify dificulties faced by the players such as performance issues, bugs and imbalences present in the game along with other useful information such suggestions and requests posted on public discussion forums by players.The current version of the DevSpec tool is only integrated with **Reddit** and is capable of performing the following tasks,
 
 1. **Analyze a chosen subreddit**
 2. **Categorize discussions under user-defined categories**
@@ -25,24 +25,62 @@ To analyze a specific subreddit a user must first provide the following informat
 5. A set of key words for each category(common words found in this category)
 6. The number of discussions to summarize for each intention sub-category.
 
-eg. analyze feedback according to 7 categories and for each sub-category show 2 discussions summarized 
+eg. analyze feedback according to 7 categories and for each sub-category show 4 discussions summarized 
 
 | subreddit  | r/PUBATTLEGROUNDS |
 | ------------- | ------------- |
 | start  | 2018/05/22  |
 | end  | 2018/08/22  |
-| category 1  | Performance  |
-| category 1 Key words  | 'fps','ram','cpu','freeze','crash','gpu' |
-| category 2  | Maps  |
-| category 2 Key words  | 'erangle','texture','buildigs','map' |
-| category 3  | Network  |
-| category 3 Key words  | 'lag','rubberband','EU','server' |
-| discussions in summary  | 2 |
+| category 0  | Performance  |
+| category 0 Key words  | 'fps','ram','cpu','freeze','crash','gpu' |
+| category 1  | Gun play  |
+| category 1 Key words  | 'gun','crosshair','shoot','recoil','control','spray' |
+| category 2  | Micro-Transactions  |
+| category 2 Key words  | 'crates','bp','skin','skins','camo' |
+| category 3  | Sounds  |
+| category 3 Key words  | 'footsteps','sound' |
+| category 4  | Maps  |
+| category 4 Key words  | 'erangel','map','maps','road','roads','compound' |
+| category 5  | Hackers  |
+| category 5 Key words  | 'anti','cheat','hackers','cheater','hacks' |
+| category 6  | Network  |
+| category 6 Key words  | 'server','desync','lag','network','ping' |
+| discussions in summary  | 4 |
 
 The following image shows the mockup of the tools query information page 
+
 #######TODO ADD IMAGE
 
-### 3. Assess the models interpritation of the topics
-In order to get the best results from DevSpec the users must first make sure the categories that has been defined are properly interpreted by the system. This can be easily done by looking at the topic interpritation graph and by inspecting the word-cloud graph generated for each topic 
+### 3. Assess the model's interpritation scores of the topics
+In order to get the best results from DevSpec the users must first make sure the categories that has been defined are properly interpreted by the system. This can be easily done by looking at the topic interpritation graph and by inspecting the word-clouds  generated for each topic a sample output of the graph is shown below.
+
+#######TODO ADD IMAGE
+
+According to this graph we can see that topics 2 and 3 have low interpritation scores while topics 0,1 and 4 have high interpritation scores. This will mean that the discussions categorization under topics 2 and 3 will not be as accurate compared to categorization under topics 0,1 and 4. This can be further analyzed by comparing the wordclouds that are generated from the most probable words per each topic. 
+
+#######TODO ADD IMAGE
+
+
+If all the categories have satisfactory interpritation scores the user can then proceed to analyze the feedback according to the given query information
+
+### 4. View the Results 
+The results will be presented to the user according to the following mockup.
+
+#######TODO ADD IMAGE
+
+
+## Technologies used in Development of DevSpec
+
+DevSpec in its core is a document categorization and summarization tool.To implement the document classification component of DevSpec [The CorEx](https://github.com/gregversteeg/corex_topic) Topic Modeling algorithm was used. This specific topic modeling framework allows seeding of each topic with pre defined anchors. this is what allows the DevSpec tool to define categories as well as key words per each category. This method is more accurate and desiarable than traditional topic modeling approaches as the anchor words will allow better convergence towards each topic. 
+
+For the summarization component a simple scoring algorithm has been implemented. The scoring algorithm will make use of the topic-word matrix produced by the CorEx algorithm as an output and a domain trained word2vec model. The topic-word matrix will provide the most probable N number of words per each topic. If the specified topic is interprited by the topic model well enough, the most probable words per each topic is intuitive and will describe the intended topic very well. The [word2vec](https://radimrehurek.com/gensim/models/word2vec.html) model will develop dense vectors for each word in the corpus. the corpus is constructed by extracting all the discussions from a particular subreddit. To score sentences, first the top 10(this number has been derived after analyzing many summaries) most probable words per each topic is combined to make a sentence. This sentence is a set of key words and is not meaningful. Using the word2vec's word representations for each word in the sentence, all word vectors in the constructed sentence are combined and devided by the number of words to make a dense sentence vecotr. Note that this will have minor performance losses as the method will discard the squence of words when constructing the vector.
+
+Once this sentence has been created all other sentences found in discussions will be scored according to the cosine similarrity between the constructed topic sentence and the target sentence. This approach combined with other summarization methods such as clustering for reducing redundancy and sentence selection from unique sections in the document etc. will be used to create the final summary for each discussion. A discriptive flow of logic of the algorithm is shown below.
+
+
+#######TODO ADD IMAGE
+
+
+
 
 
