@@ -49,7 +49,7 @@ eg. analyze feedback according to 7 categories and for each sub-category show 4 
 
 The following image shows the mockup of the tools query information page 
 
-![Image of tool](https://github.com/UmenR/DevSpec_frontend/blob/master/DocImages/querypage.PNG)
+![Image of tool](https://raw.githubusercontent.com/UmenR/DevSpec_frontend/master/DocImages/querypage.PNG)
 
 ### 3. Assess the model's interpretation scores of the defined categories
 In order to get the best results from DevSpec the users must first make sure the categories that has been defined are properly interpreted by the tool. This can be easily done by looking at the topic interpretation graph and by inspecting the word-clouds  generated for each topic. Both the graph and the word-clouds will be presented to the user after the analysis. a sample output of the graph is shown below.
