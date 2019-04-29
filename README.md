@@ -82,7 +82,7 @@ For the summarization component a simple scoring algorithm has been implemented.
 Once this sentence has been created all other sentences found in discussions will be scored according to the cosine similarity between the constructed topic sentence and the target sentence. This approach combined with other summarization methods such as clustering for reducing redundancy and sentence selection from unique sections in the document etc. will be used to create the final summary for each discussion. A descriptive flow of logic of the algorithm is shown below.
 
 
-![Image of tool](https://raw.githubusercontent.com/UmenR/DevSpec_frontend/master/DocImages/logic.jpg)
+![Image of tool](https://i.imgur.com/6f2puYJ.jpg)
 
 
 
