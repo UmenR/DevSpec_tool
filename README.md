@@ -1,4 +1,3 @@
-# DevSpec
 ## About DevSpec
 DevSpec is a feedback analysis tool built specifically for capturing feedback about video games from public discussion forums. DevSpec is built to assist the development process by allowing the development teams to identify difficulties faced by the players such as performance issues, bugs and imbalances present in the game along with other useful information about the game such as suggestions and requests posted on public discussion forums by players. The current version of the DevSpec tool is only integrated with **Reddit** and is capable of performing the following tasks,
 
