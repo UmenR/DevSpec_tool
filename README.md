@@ -51,19 +51,19 @@ The following image shows the mockup of the tools query information page
 
 ![Image of tool](https://github.com/UmenR/DevSpec_frontend/blob/master/DocImages/querypage.PNG)
 
-### 3. Assess the model's interpretation scores of the topics
-In order to get the best results from DevSpec the users must first make sure the categories that has been defined are properly interpreted by the system. This can be easily done by looking at the topic interpretation graph and by inspecting the word-clouds  generated for each topic a sample output of the graph is shown below.
+### 3. Assess the model's interpretation scores of the defined categories
+In order to get the best results from DevSpec the users must first make sure the categories that has been defined are properly interpreted by the tool. This can be easily done by looking at the topic interpretation graph and by inspecting the word-clouds  generated for each topic. Both the graph and the word-clouds will be presented to the user after the analysis. a sample output of the graph is shown below.
 
 
 ![Image of tool](https://github.com/UmenR/DevSpec_frontend/blob/master/DocImages/topicscores.PNG)
 
-According to this graph we can see that categories 2 and 3 have low interpretation scores while categories 0,1 and 4 have high interpretation scores. This will mean that the discussions categorization under category 2 and 3 will not be as accurate compared to categorization under category 0,1 and 4. This can be further analyzed by comparing the word clouds that are generated from the most probable words per each category.  
+According to this graph we can see that categories 2 and 3 have low interpretation scores while categories 0,1 and 4 have high interpretation scores. This will mean that the discussions categorized under category 2 and 3 will not be as accurate compared to discussion categorized under category 0,1 and 4. This can be further analyzed by comparing the word clouds that are generated from the most probable words per each category.  
 
 | category 4 Maps  | category 3 Sounds |
 | ------------- | ------------- |
 | ![Image of tool](https://github.com/UmenR/DevSpec_frontend/blob/master/DocImages/topic4wc.PNG)  | ![Image of tool](https://github.com/UmenR/DevSpec_frontend/blob/master/DocImages/topic3wc.PNG)  |
 
-From the table above we can see that the most probable words in the category 4 word cloud represents the topic Maps very well while the category 3 word cloud does not represent the topic Sounds. To increase this interpretation of the model, the user must either define a different topic or provide more informative keywords for the category
+From the table above we can see that the most probable words in the **category 4** word cloud represents the topic Maps **very well** while the **category 3** word cloud **does not represent** the topic Sounds. To increase the interpretation of the categories, the user must either define a different categories or provide more informative keywords for each category
 
 If all the categories have satisfactory interpretation scores the user can then proceed to analyze the feedback according to the given query information
 
