@@ -1,3 +1,9 @@
+::-webkit-scrollbar {
+  display: none;
+}
+ion-grid.inner{
+  overflow:auto;
+}
 ion-grid.grid{
     margin: auto;
     width: 50%;
@@ -5,17 +11,45 @@ ion-grid.grid{
     padding: 50px;
   }
 
+ion-row.outer{
+  height: 750px;
+  width: 800px;
+  margin-left: -200px;
+  overflow: auto;
+  
+}
+
+ion-card.outer{
+  width:900px;
+  // overflow: auto;
+}
   ion-card{
-    height:700px;
-    width:600px;
+    width:900px;
+   
+  }
+  ion-card.inner{
+    height: 400px;
+    width:700px;
   }
 
   ion-textarea.card-text{
-    
+    height: 250px;
     border-style: solid; 
   }
 
   div.get{
     display:block;
     overflow:auto;
+  }
+
+  ion-toolbar.header{
+    --background: #3880ff;
+  }
+  ion-title.title{
+    color: white;
+  }
+  ion-label.card-topic{
+    color: #3880ff;
+    font-size: 3em
+
   }

@@ -1,71 +1,221 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header> 
+  <ion-toolbar class="header">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>
-      List
+    <ion-title class="title">
+      Results
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-grid class="grid">
-    <ion-row>
-      <ion-card>
+    <ion-row class="outer">
+      <ion-card class="outer">
         <ion-item>
-          <ion-icon name="pin" slot="start"></ion-icon>
-          <ion-label>Performance</ion-label>
-          <ion-button fill="outline" slot="end">View</ion-button>
+          <ion-label class="card-topic">Performance</ion-label>
         </ion-item>
-      
-        <ion-card-content>
+        <ion-card-content class="outer">
           <ion-grid>
             <ion-row>
-              <ion-col>
-                <div class="get">
-                    <ion-textarea class="card-text" placeholder="Keywords"></ion-textarea>
-                </div>
-                
-              </ion-col>
-              <ion-col>
-                <div class="get">
-                    <ion-textarea class="card-text" placeholder="Keywords"></ion-textarea>
-                </div>
-                
-              </ion-col>
+                  <ion-chip color="primary">
+                      <ion-label color="primary">fps</ion-label>
+                  </ion-chip>
+                  <ion-chip color="primary">
+                      <ion-label color="primary">ram</ion-label>
+                  </ion-chip>
+                  <ion-chip color="primary">
+                      <ion-label color="primary">cpu</ion-label>
+                  </ion-chip>
+                  <ion-chip color="primary">
+                      <ion-label color="primary">freeze</ion-label>
+                  </ion-chip>
+                  <ion-chip color="primary">
+                      <ion-label color="primary">crash</ion-label>
+                  </ion-chip>
+                  <ion-chip color="primary">
+                      <ion-label color="primary">gpu</ion-label>
+                  </ion-chip>
+             </ion-row>
+             <ion-row>
+                    <ion-card class="inner">
+                        <ion-card-header>
+                          <ion-card-subtitle>Sub-category 1</ion-card-subtitle>
+                          <ion-card-title>Reporting Bugs</ion-card-title>
+                        </ion-card-header>
+                        <ion-card-content>
+                          <ion-grid>
+                            <ion-row>
+                                <ion-col>
+                                    <div class="get">
+                                        <ion-textarea  class="card-text" placeholder="Keywords"></ion-textarea>
+                                    </div>
+                                  </ion-col>
+                                  <ion-col>
+                                    <div class="get">
+                                        <ion-textarea  class="card-text" placeholder="Keywords"></ion-textarea>
+                                    </div>
+                                </ion-col>
+                            </ion-row>
+                          </ion-grid>
+                        </ion-card-content>
+                      </ion-card>
+          </ion-row>
+          <ion-row>
+              <ion-card class="inner">
+                  <ion-card-header>
+                    <ion-card-subtitle>Sub-category 2</ion-card-subtitle>
+                    <ion-card-title>Suggesting Features</ion-card-title>
+                  </ion-card-header>
+                  <ion-card-content>
+                    <ion-grid>
+                      <ion-row>
+                          <ion-col>
+                              <div class="get">
+                                  <ion-textarea class="card-text" placeholder="Keywords"></ion-textarea>
+                              </div>
+                            </ion-col>
+                            <ion-col>
+                              <div class="get">
+                                  <ion-textarea class="card-text" placeholder="Keywords"></ion-textarea>
+                              </div>
+                          </ion-col>
+                      </ion-row>
+                    </ion-grid>
+                  </ion-card-content>
+                </ion-card>
             </ion-row>
+            <ion-row>
+                <ion-card class="inner">
+                    <ion-card-header>
+                      <ion-card-subtitle>Sub-category 1</ion-card-subtitle>
+                      <ion-card-title>Reporting Bugs</ion-card-title>
+                    </ion-card-header>
+                    <ion-card-content>
+                      <ion-grid>
+                        <ion-row>
+                            <ion-col>
+                                <div class="get">
+                                    <ion-textarea class="card-text" placeholder="Keywords"></ion-textarea>
+                                </div>
+                              </ion-col>
+                              <ion-col>
+                                <div class="get">
+                                    <ion-textarea class="card-text" placeholder="Keywords"></ion-textarea>
+                                </div>
+                            </ion-col>
+                        </ion-row>
+                      </ion-grid>
+                    </ion-card-content>
+                  </ion-card>
+              </ion-row>
           </ion-grid>
         </ion-card-content>
       </ion-card>
     </ion-row>
-    <ion-row>
-      <ion-card>
-        <ion-item>
-          <ion-icon name="pin" slot="start"></ion-icon>
-          <ion-label>ion-item in a card, icon left, button right</ion-label>
-          <ion-button fill="outline" slot="end">View</ion-button>
-        </ion-item>
-      
-        <ion-card-content>
-          This is content, without any paragraph or header tags,
-          within an ion-card-content element.
-        </ion-card-content>
-      </ion-card>
-    </ion-row>
-    <ion-row>
-      <ion-card>
-        <ion-item>
-          <ion-icon name="pin" slot="start"></ion-icon>
-          <ion-label>ion-item in a card, icon left, button right</ion-label>
-          <ion-button fill="outline" slot="end">View</ion-button>
-        </ion-item>
-      
-        <ion-card-content>
-          This is content, without any paragraph or header tags,
-          within an ion-card-content element.
-        </ion-card-content>
-      </ion-card>
-    </ion-row>
+    <ion-row class="outer">
+        <ion-card class="outer">
+          <ion-item>
+            <ion-label class="card-topic">Network</ion-label>
+          </ion-item>
+          <ion-card-content class="outer">
+            <ion-grid>
+              <ion-row>
+                    <ion-chip color="primary">
+                        <ion-label color="primary">lag</ion-label>
+                    </ion-chip>
+                    <ion-chip color="primary">
+                        <ion-label color="primary">ping</ion-label>
+                    </ion-chip>
+                    <ion-chip color="primary">
+                        <ion-label color="primary">rubberband</ion-label>
+                    </ion-chip>
+                    <ion-chip color="primary">
+                        <ion-label color="primary">servers</ion-label>
+                    </ion-chip>
+                    <ion-chip color="primary">
+                        <ion-label color="primary">na</ion-label>
+                    </ion-chip>
+                    <ion-chip color="primary">
+                        <ion-label color="primary">eu</ion-label>
+                    </ion-chip>
+               </ion-row>
+               <ion-row>
+                      <ion-card class="inner">
+                          <ion-card-header>
+                            <ion-card-subtitle>Sub-category 1</ion-card-subtitle>
+                            <ion-card-title>Reporting Bugs</ion-card-title>
+                          </ion-card-header>
+                          <ion-card-content>
+                            <ion-grid>
+                              <ion-row>
+                                  <ion-col>
+                                      <div class="get">
+                                          <ion-textarea class="card-text" placeholder="Keywords"></ion-textarea>
+                                      </div>
+                                    </ion-col>
+                                    <ion-col>
+                                      <div class="get">
+                                          <ion-textarea class="card-text" placeholder="Keywords"></ion-textarea>
+                                      </div>
+                                  </ion-col>
+                              </ion-row>
+                            </ion-grid>
+                          </ion-card-content>
+                        </ion-card>
+            </ion-row>
+            <ion-row>
+                <ion-card class="inner">
+                    <ion-card-header>
+                      <ion-card-subtitle>Sub-category 1</ion-card-subtitle>
+                      <ion-card-title>Suggesting Features</ion-card-title>
+                    </ion-card-header>
+                    <ion-card-content>
+                      <ion-grid>
+                        <ion-row>
+                            <ion-col>
+                                <div class="get">
+                                    <ion-textarea class="card-text" placeholder="Keywords"></ion-textarea>
+                                </div>
+                              </ion-col>
+                              <ion-col>
+                                <div class="get">
+                                    <ion-textarea class="card-text" placeholder="Keywords"></ion-textarea>
+                                </div>
+                            </ion-col>
+                        </ion-row>
+                      </ion-grid>
+                    </ion-card-content>
+                  </ion-card>
+              </ion-row>
+              <ion-row>
+                  <ion-card class="inner">
+                      <ion-card-header>
+                        <ion-card-subtitle>Sub-category 1</ion-card-subtitle>
+                        <ion-card-title>Reporting Bugs</ion-card-title>
+                      </ion-card-header>
+                      <ion-card-content>
+                        <ion-grid>
+                          <ion-row>
+                              <ion-col>
+                                  <div class="get">
+                                      <ion-textarea class="card-text" placeholder="Keywords"></ion-textarea>
+                                  </div>
+                                </ion-col>
+                                <ion-col>
+                                  <div class="get">
+                                      <ion-textarea class="card-text" placeholder="Keywords"></ion-textarea>
+                                  </div>
+                              </ion-col>
+                          </ion-row>
+                        </ion-grid>
+                      </ion-card-content>
+                    </ion-card>
+                </ion-row>
+            </ion-grid>
+          </ion-card-content>
+        </ion-card>
+      </ion-row>
   </ion-grid>
 </ion-content>

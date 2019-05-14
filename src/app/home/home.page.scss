@@ -15,3 +15,24 @@
 ion-button.background{
   height: 100px;
 }
+ion-toolbar.header{
+  --background: #3880ff;
+}
+ion-title.title{
+  color: white;
+}
+ion-card.topic-card {
+  height: 350px;
+}
+ion-textarea.card-text{
+  height: 200px;
+  width: 100%;
+  border-style: solid; 
+}
+div.get{
+  display:block;
+  overflow:auto;
+}
+ion-button.add-button {
+  height: 40px;
+}

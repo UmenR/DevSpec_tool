@@ -1,9 +1,9 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="header">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>
+    <ion-title class="title">
       Home
     </ion-title>
   </ion-toolbar>
@@ -52,50 +52,53 @@
         </ion-row>
           <ion-row>
               <ion-col>
-                  <ion-card>
+                  <ion-card class="topic-card">
                       <ion-card-header>
                         <ion-card-subtitle>Topic 1</ion-card-subtitle>
                         <ion-card-title>
-                            <ion-input placeholder="Enter Input"></ion-input>
+                            <ion-input placeholder="Enter Category Name"></ion-input>
                         </ion-card-title>
                       </ion-card-header>
                     
                       <ion-card-content>
-                          <ion-item>
-                              <ion-textarea placeholder="Keywords"></ion-textarea>
-                            </ion-item>
+                              <div class="get">
+                                      <ion-label position="stacked">Key words</ion-label>
+                                      <ion-textarea class="card-text"></ion-textarea>
+                              </div>
                       </ion-card-content>
                     </ion-card>
               </ion-col>
               <ion-col>
-                  <ion-card>
+                  <ion-card class="topic-card">
                       <ion-card-header>
-                        <ion-card-subtitle>Topic 1</ion-card-subtitle>
+                        <ion-card-subtitle>Topic 2</ion-card-subtitle>
                         <ion-card-title>
-                            <ion-input placeholder="Enter Input"></ion-input>
+                            <ion-input placeholder="Enter Category Name"></ion-input>
                         </ion-card-title>
                       </ion-card-header>
                     
                       <ion-card-content>
-                          <ion-item>
-                              <ion-textarea placeholder="Keywords"></ion-textarea>
-                            </ion-item>
+                              <div class="get">
+                                      <ion-label position="stacked">Key words</ion-label>
+                                      <ion-textarea class="card-text"></ion-textarea>
+                              </div>
                       </ion-card-content>
                     </ion-card>
               </ion-col>
               <ion-col>
-                  <ion-card>
+                  <ion-card class="topic-card">
                       <ion-card-header>
-                        <ion-card-subtitle>Topic 1</ion-card-subtitle>
+                        <ion-card-subtitle>Topic 3</ion-card-subtitle>
                         <ion-card-title>
-                            <ion-input placeholder="Enter Input"></ion-input>
+                            <ion-input placeholder="Enter Category Name"></ion-input>
                         </ion-card-title>
                       </ion-card-header>
                     
                       <ion-card-content>
-                          <ion-item>
-                              <ion-textarea placeholder="Keywords"></ion-textarea>
-                            </ion-item>
+                              <div class="get">
+                                      <ion-label position="stacked">Key words</ion-label>
+                                      <ion-textarea class="card-text"></ion-textarea>
+                              </div>
                       </ion-card-content>
                     </ion-card>
               </ion-col>
@@ -105,7 +108,7 @@
 
               </ion-col>
               <ion-col>
-                <ion-button class="background" size="large" expand="full">Add Topic</ion-button>
+                <ion-button class="background" size="large" class="add-button" expand="full">Add Topic</ion-button>
               </ion-col>
               <ion-col>
                 
