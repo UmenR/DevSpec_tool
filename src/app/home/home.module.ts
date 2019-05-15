@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
 import { Ionic4DatepickerModule } from '@logisticinfotech/ionic4-datepicker';
+import {InputCardComponent} from '../components/input-card/input-card.component'
 
 @NgModule({
   imports: [
@@ -20,6 +21,13 @@ import { Ionic4DatepickerModule } from '@logisticinfotech/ionic4-datepicker';
       }
     ])
   ],
-  declarations: [HomePage]
+  declarations: [HomePage,InputCardComponent]
 })
-export class HomePageModule {}
+export class HomePageModule {
+  inputsArray = []
+
+  constructor(){}
+
+  
+
+}
