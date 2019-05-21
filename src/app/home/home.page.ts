@@ -14,6 +14,11 @@ export class HomePage {
   selectedDateAfter;
   beforedate = "";
   afterdate = "";
+  gridRows = [];
+  inputsArray = [];
+  elimentsPerRow = 3;
+  
+
 
   constructor(public modalCtrl: ModalController) {}
 
@@ -54,6 +59,7 @@ export class HomePage {
       this.selectedDateBefore = data.data.date;
     });
   }
+
   async openDatePickerAfter() {
     console.log("Open Date PIcker");
 
@@ -68,5 +74,37 @@ export class HomePage {
     console.log(data);
     this.selectedDateAfter = data.data.date;
   });
+}
+
+/**
+   * Split the input array according to the number of rows and columns
+   */
+  createArrays(): void {
+    this.gridRows = [];
+    let totalElms = this.inputsArray.length;
+    let totalRows = Math.ceil(totalElms/this.elimentsPerRow);
+
+    for (let i=0; i<totalRows; i++){
+      let currentRow = this.inputsArray.slice(i*this.elimentsPerRow,(i*this.elimentsPerRow)+this.elimentsPerRow);
+      this.gridRows.push(currentRow);
+    }
+}
+
+/**
+   * Create and add new input element object to the inputs array
+   */
+  clickAddMoreTopics(): void {
+    let topicNumber = this.inputsArray.length + 1
+    let inputObj = {
+      topicNo : topicNumber,
+      topic:'',
+      keys:''
+    }
+    this.inputsArray.push(inputObj)
+    this.createArrays();
+  }
+
+analyze(){
+  console.log(this.gridRows);
 }
 }

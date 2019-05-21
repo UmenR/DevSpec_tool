@@ -24,10 +24,43 @@ import {InputCardComponent} from '../components/input-card/input-card.component'
   declarations: [HomePage,InputCardComponent]
 })
 export class HomePageModule {
-  inputsArray = []
+  // inputsArray = [];
+  // gridRows = [];
+  // elimentsPerRow = 3;
 
-  constructor(){}
+  constructor(){
+    // this.createArrays();
+    // console.log(this.gridRows.length);
+    // console.log(this.gridRows)
+  }
 
-  
+  /**
+   * Split the input array according to the number of rows and columns
+   */
+  // createArrays(): void {
+  //   let totalElms = this.inputsArray.length;
+  //   let totalRows = Math.ceil(totalElms/this.elimentsPerRow);
+
+  //   for (let i=0; i<totalRows; i++){
+  //     let currentRow = this.inputsArray.slice(i*this.elimentsPerRow,(i*this.elimentsPerRow)+this.elimentsPerRow);
+  //     this.gridRows.push(currentRow);
+  //   }
+  // }
+
+  // /**
+  //  * Create and add new input element object to the inputs array
+  //  */
+  // clickAddMoreTopics(): void {
+  //   let topicNumber = this.inputsArray.length + 1
+  //   let inputObj = {
+  //     topicNo : topicNumber,
+  //     topic:''
+  //   }
+  //   this.inputsArray.push(inputObj)
+  //   this.createArrays();
+  //   console.log(this.gridRows.length);
+  //   console.log(this.gridRows)
+
+  // }
 
 }

@@ -52,17 +52,59 @@
         </ion-row>
       </ion-grid>
       <ion-grid>
-          <ion-row>
+          <ion-row *ngFor = "let row  of gridRows">
               <ion-col>
-                <app-input-card topicNumber=1></app-input-card>
+                <ion-card class="topic-card">
+                  <ion-card-header>
+                    <ion-card-subtitle>Topic {{row[0].topicNo}}</ion-card-subtitle>
+                    <ion-card-title>
+                        <ion-input [(ngModel)]="row[0].topic" placeholder="Enter Category Name"></ion-input>
+                    </ion-card-title>
+                  </ion-card-header>
+                
+                  <ion-card-content>
+                          <div class="get">
+                                  <ion-label position="stacked">Key words</ion-label>
+                                  <ion-textarea [(ngModel)]="row[0].keys" class="card-text"></ion-textarea>
+                          </div>
+                  </ion-card-content>
+                </ion-card>
               </ion-col>
-              <ion-col>
-                <app-input-card topicNumber=1></app-input-card>
+              <ion-col *ngIf="row.length > 1">
+                <ion-card class="topic-card">
+                  <ion-card-header>
+                    <ion-card-subtitle>Topic {{row[1].topicNo}}</ion-card-subtitle>
+                    <ion-card-title>
+                        <ion-input [(ngModel)]="row[1].topic" placeholder="Enter Category Name"></ion-input>
+                    </ion-card-title>
+                  </ion-card-header>
+                  <ion-card-content>
+                          <div class="get">
+                                  <ion-label position="stacked">Key words</ion-label>
+                                  <ion-textarea [(ngModel)]="row[1].keys" class="card-text"></ion-textarea>
+                          </div>
+                  </ion-card-content>
+                </ion-card>
               </ion-col>
-              <ion-col>
-                <app-input-card topicNumber=1></app-input-card>
+              <ion-col *ngIf="row.length > 2">
+                <ion-card class="topic-card">
+                  <ion-card-header>
+                    <ion-card-subtitle>Topic {{row[2].topicNo}}</ion-card-subtitle>
+                    <ion-card-title>
+                        <ion-input [(ngModel)]="row[2].topic" placeholder="Enter Category Name"></ion-input>
+                    </ion-card-title>
+                  </ion-card-header>
+                
+                  <ion-card-content>
+                          <div class="get">
+                                  <ion-label position="stacked">Key words</ion-label>
+                                  <ion-textarea [(ngModel)]="row[2].keys" class="card-text"></ion-textarea>
+                          </div>
+                  </ion-card-content>
+                </ion-card>
               </ion-col>
           </ion-row>
     </ion-grid>
-  
+    <ion-button (click)="clickAddMoreTopics()">Add topic</ion-button>
+    <ion-button (click)="analyze()">Analyze</ion-button>
   </ion-content>

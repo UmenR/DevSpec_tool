@@ -2,14 +2,15 @@
   <ion-card-header>
     <ion-card-subtitle>Topic {{topicNo}}</ion-card-subtitle>
     <ion-card-title>
-        <ion-input placeholder="Enter Category Name"></ion-input>
+        <ion-input [(ngModel)]="topic" placeholder="Enter Category Name"></ion-input>
     </ion-card-title>
   </ion-card-header>
 
   <ion-card-content>
           <div class="get">
                   <ion-label position="stacked">Key words</ion-label>
-                  <ion-textarea class="card-text"></ion-textarea>
+                  <ion-textarea [(ngModel)]="keys" class="card-text"></ion-textarea>
           </div>
   </ion-card-content>
+  <ion-button (click)="rar()">Default</ion-button>
 </ion-card>
