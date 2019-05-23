@@ -12,6 +12,9 @@
   margin-bottom: 10px;  
 }
 
+.background {
+  --background: url('./tp2.png');
+}
 ion-button.background{
   height: 100px;
 }
@@ -21,45 +24,37 @@ ion-toolbar.header{
 ion-title.title{
   color: white;
 }
-ion-button.add-button {
-  height: 40px;
+
+.card{
+  background:rgba(255,255,255,1);
+  margin: auto;
+  width: 35%;
+  height:400px;
+  margin-top: 190px;
 }
 
-.welcome-card ion-img {
-  max-height: 35vh;
-  overflow: hidden;
+.title{
+  color: #3880ff;
+  font-size: 30px;
 }
 
-#rounded {
-  width: 100%;
-  height: 100px;
-  -moz-border-radius: 50px;
-  -webkit-border-radius: 50px;
-  border-radius: 10px;
-  margin-bottom: 10px;  
+.sub-title{
+  font-size: 20px;
 }
 
-ion-button.background{
-  height: 100px;
+.content{
+  font-size: 15px;
 }
-ion-toolbar.header{
-  --background: #3880ff;
+
+.highlight{
+ font-size: 20px
 }
-ion-title.title{
-  color: white;
+.content ion-input{
+  text-align: center;
 }
-ion-card.topic-card {
-  height: 350px;
-}
-ion-textarea.card-text{
-  height: 200px;
-  width: 100%;
-  border-style: solid; 
-}
-div.get{
-  display:block;
-  overflow:auto;
-}
-ion-button.add-button {
-  height: 40px;
+
+.centerbutt{
+    margin-left: auto;
+    margin-right: auto;
+    display: block !important;
 }

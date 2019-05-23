@@ -16,9 +16,19 @@ export class AppComponent {
       icon: 'home'
     },
     {
+      title: 'Analyze',
+      url: '/analyze',
+      icon:'construct'
+    },
+    {
+      title: 'Scores',
+      url: '/scores',
+      icon:'podium'
+    },
+    {
       title: 'Results',
       url: '/list',
-      icon: 'list'
+      icon: 'list-box'
     }
   ];
 

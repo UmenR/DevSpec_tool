@@ -10,101 +10,22 @@
 </ion-header>
 
 <ion-content class="background">
-    <ion-grid>
-        <ion-row>
-            <ion-col>
-                <ion-item>
-                    <ion-label position="floating">Subreddit</ion-label>
-                    <ion-input placeholder="r/"></ion-input>
-                </ion-item>
-            </ion-col>
-          <ion-col>
-              <ion-item class='floatingwithicon'>
-                  <ion-label position="floating" >Start Date</ion-label>
-                  <ion-icon name="calendar" class='calicon' slot="end"></ion-icon>
-                  <ion-input
-                    readonly
-                    [(ngModel)]="beforedate"
-                    (ionChange)="onChangeDateBefore()"
-                    [liIonic4Datepicker]="datePickerObjBefore"
-                  ></ion-input>
-                </ion-item>
-          </ion-col>
-          <ion-col>
-              <ion-item class='floatingwithicon'>
-                  <ion-label position="floating" >End Date</ion-label>
-                  <ion-icon name="calendar" class='calicon' slot="end"></ion-icon>
-                  <ion-input
-                    readonly
-                    [(ngModel)]="afterdate"
-                    (ionChange)="onChangeDateAfter()"
-                    [liIonic4Datepicker]="datePickerObjAfter"
-                  ></ion-input>
-                </ion-item>
-          </ion-col>
-          <ion-col>
-              <ion-item class='floatingwithicon'>
-                  <ion-label position="floating" >Discussions Per Summary</ion-label>
-                  <ion-icon name="cog" class='calicon' slot="end"></ion-icon>
-                  <ion-input fill="outline"></ion-input>
-                </ion-item>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-      <ion-grid>
-          <ion-row *ngFor = "let row  of gridRows">
-              <ion-col>
-                <ion-card class="topic-card">
-                  <ion-card-header>
-                    <ion-card-subtitle>Topic {{row[0].topicNo}}</ion-card-subtitle>
-                    <ion-card-title>
-                        <ion-input [(ngModel)]="row[0].topic" placeholder="Enter Category Name"></ion-input>
-                    </ion-card-title>
-                  </ion-card-header>
-                
-                  <ion-card-content>
-                          <div class="get">
-                                  <ion-label position="stacked">Key words</ion-label>
-                                  <ion-textarea [(ngModel)]="row[0].keys" class="card-text"></ion-textarea>
-                          </div>
-                  </ion-card-content>
-                </ion-card>
-              </ion-col>
-              <ion-col *ngIf="row.length > 1">
-                <ion-card class="topic-card">
-                  <ion-card-header>
-                    <ion-card-subtitle>Topic {{row[1].topicNo}}</ion-card-subtitle>
-                    <ion-card-title>
-                        <ion-input [(ngModel)]="row[1].topic" placeholder="Enter Category Name"></ion-input>
-                    </ion-card-title>
-                  </ion-card-header>
-                  <ion-card-content>
-                          <div class="get">
-                                  <ion-label position="stacked">Key words</ion-label>
-                                  <ion-textarea [(ngModel)]="row[1].keys" class="card-text"></ion-textarea>
-                          </div>
-                  </ion-card-content>
-                </ion-card>
-              </ion-col>
-              <ion-col *ngIf="row.length > 2">
-                <ion-card class="topic-card">
-                  <ion-card-header>
-                    <ion-card-subtitle>Topic {{row[2].topicNo}}</ion-card-subtitle>
-                    <ion-card-title>
-                        <ion-input [(ngModel)]="row[2].topic" placeholder="Enter Category Name"></ion-input>
-                    </ion-card-title>
-                  </ion-card-header>
-                
-                  <ion-card-content>
-                          <div class="get">
-                                  <ion-label position="stacked">Key words</ion-label>
-                                  <ion-textarea [(ngModel)]="row[2].keys" class="card-text"></ion-textarea>
-                          </div>
-                  </ion-card-content>
-                </ion-card>
-              </ion-col>
-          </ion-row>
-    </ion-grid>
-    <ion-button (click)="clickAddMoreTopics()">Add topic</ion-button>
-    <ion-button (click)="analyze()">Analyze</ion-button>
-  </ion-content>
+  <ion-card class="card">
+    <ion-card-header>
+      <ion-card-title class="title">DevSpec Feedback Analysis Tool</ion-card-title>
+      <ion-card-subtitle class="sub-title">About</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content class="content">
+      DevSpec is a tool built for Developers and Community managers to assist with the Feedback analysis process.
+      More information about the functionalities and the Technology behind the DevSpec tool can be aquired <a href="https://umenr.github.io/DevSpec_tool/">Here</a>
+    <br>
+    <br>
+    <p class="highlight">To begin please enter a desired subreddit below</p>
+    <br>
+    <ion-input placeholder="PUBATTLEGROUNDS"></ion-input>
+    <br>
+    <ion-button class="centerbutt" color=primary>Proceed</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
