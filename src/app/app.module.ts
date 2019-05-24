@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouteReuseStrategy } from '@angular/router';
+import { RouteReuseStrategy, RouterModule } from '@angular/router';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -20,6 +20,7 @@ import {HttpServiceService} from './services/http-service.service';
     IonicModule.forRoot(),
     Ionic4DatepickerModule,
     AppRoutingModule,
+    RouterModule,
     HttpClientModule
   ],
   providers: [

@@ -12,8 +12,13 @@
   margin-bottom: 10px;  
 }
 
+ion-menu {
+  background-color: black
+}
+
 .background {
   --background: url('./tp2.png');
+  background-color: black
 }
 ion-button.background{
   height: 100px;

@@ -1,5 +1,5 @@
 import { Component,OnInit } from '@angular/core';
-import { Ionic4DatepickerModalComponent } from "@logisticinfotech/ionic4-datepicker";
+import { RouterModule,Router } from '@angular/router';
 import { ModalController } from "@ionic/angular";
 import {HttpServiceService} from '../services/http-service.service';
 
@@ -11,15 +11,14 @@ import {HttpServiceService} from '../services/http-service.service';
 export class HomePage {
   
 
-  constructor(public modalCtrl: ModalController, private http: HttpServiceService) {}
+  constructor(public modalCtrl: ModalController, private http: HttpServiceService, public router:Router) {}
 
   ngOnInit() {}
 
   clickProceed(){
-    var promise1 = new Promise(function(resolve, reject) {
-      // http.makeGETrequest();
-      resolve('sdsd');
-    });
-    promise1.then(()=>console.log('2'))
+    let that = this.router;
+    this.http.makeGETrequest((that)=>{
+      this.router.navigateByUrl('/analyze')
+    })
   }
 }

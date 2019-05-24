@@ -1,6 +1,8 @@
 import { Component,OnInit } from '@angular/core';
 import { Ionic4DatepickerModalComponent } from "@logisticinfotech/ionic4-datepicker";
 import { ModalController } from "@ionic/angular";
+import { Router, NavigationExtras } from '@angular/router';
+import {HttpServiceService} from '../services/http-service.service';
 
 @Component({
   selector: 'app-analyze',
@@ -20,7 +22,7 @@ export class AnalyzePage implements OnInit {
   
 
 
-  constructor(public modalCtrl: ModalController) {}
+  constructor(public modalCtrl: ModalController,public router:Router,private http: HttpServiceService) {}
 
   ngOnInit() {
     this.datePickerObjBefore = {
@@ -105,6 +107,8 @@ export class AnalyzePage implements OnInit {
   }
 
 analyze(){
-  console.log(this.gridRows);
+  this.http.makeGETrequest1((res)=>{
+    this.router.navigate(['/scores'])
+  })
 }
 }
