@@ -36,7 +36,7 @@ export class ListPage implements OnInit {
   }
 
   clickProceed(){
-    this.http.makeGETrequest2(() => {
+    this.http.callResults(() => {
       console.log(this.http.summaryData);
     })
   }

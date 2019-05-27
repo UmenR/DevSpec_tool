@@ -23,9 +23,12 @@
     <br>
     <p class="highlight">To begin please enter a desired subreddit below</p>
     <br>
-    <ion-input placeholder="PUBATTLEGROUNDS"></ion-input>
+    <ion-input [(ngModel)]="game" placeholder="PUBATTLEGROUNDS"></ion-input>
     <br>
     <ion-button class="centerbutt" color=primary (click)="clickProceed()">Proceed</ion-button>
     </ion-card-content>
   </ion-card>
+  <div *ngFor = "let chart  of idset">
+    <p id=i{{chart}}>hoho</p>
+  </div>
 </ion-content>

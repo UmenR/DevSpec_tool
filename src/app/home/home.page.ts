@@ -9,16 +9,19 @@ import {HttpServiceService} from '../services/http-service.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  
-
+  game: string = "PUBATTLEGROUNDS";
+  idset = [];
   constructor(public modalCtrl: ModalController, private http: HttpServiceService, public router:Router) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.idset = ['i1','i2']
+  }
 
   clickProceed(){
     let that = this.router;
-    this.http.makeGETrequest((that)=>{
+    let parameters = {"game":this.game}
+    this.http.callW2W((that)=>{
       this.router.navigateByUrl('/analyze')
-    })
+    },parameters)
   }
 }
