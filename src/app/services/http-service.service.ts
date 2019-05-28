@@ -9,6 +9,8 @@ export class HttpServiceService {
   topics:any;
   summaryData:any;
   baseUrl:string = "http://35.185.114.85:5000/v1/";
+  sampleTopics = ["Topic1","Topic2","Topic3","Topic4","Topic5","Topic6"]
+  sampleTopicKWs = [["kw1","kw2","kw3"],["kw4","kw5","kw6"],["kw7","kw8","kw9"],["kw10","kw11","kw12"],["kw13","kw14","kw15"],["kw16","kw17","kw18"]]
   constructor(private  httpClient : HttpClient) { }
 
   public callW2W(callback,parameters?:any) {

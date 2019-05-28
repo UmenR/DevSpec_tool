@@ -10,213 +10,33 @@
 </ion-header>
 
 <ion-content>
-    <ion-button class="centerbutt" color=primary (click)="clickProceed()">Proceed</ion-button>
-  <!-- <ion-grid class="grid">
-    <ion-row class="outer">
-      <ion-card class="outer">
-        <ion-item>
-          <ion-label class="card-topic">Performance</ion-label>
-        </ion-item>
-        <ion-card-content class="outer">
+ <ion-grid>
+  <div *ngFor = "let category of summaryData">
+      <h4>{{category.topic}}</h4>
+      <ion-row class="outerrow" >
           <ion-grid>
             <ion-row>
-                  <ion-chip color="primary">
-                      <ion-label color="primary">fps</ion-label>
-                  </ion-chip>
-                  <ion-chip color="primary">
-                      <ion-label color="primary">ram</ion-label>
-                  </ion-chip>
-                  <ion-chip color="primary">
-                      <ion-label color="primary">cpu</ion-label>
-                  </ion-chip>
-                  <ion-chip color="primary">
-                      <ion-label color="primary">freeze</ion-label>
-                  </ion-chip>
-                  <ion-chip color="primary">
-                      <ion-label color="primary">crash</ion-label>
-                  </ion-chip>
-                  <ion-chip color="primary">
-                      <ion-label color="primary">gpu</ion-label>
-                  </ion-chip>
-             </ion-row>
-             <ion-row>
-                    <ion-card class="inner">
-                        <ion-card-header>
-                          <ion-card-subtitle>Sub-category 1</ion-card-subtitle>
-                          <ion-card-title>Reporting Bugs</ion-card-title>
-                        </ion-card-header>
-                        <ion-card-content>
-                          <ion-grid>
-                            <ion-row>
-                                <ion-col>
-                                    <div class="get">
-                                        <ion-textarea  class="card-text" placeholder="Keywords"></ion-textarea>
-                                    </div>
-                                  </ion-col>
-                                  <ion-col>
-                                    <div class="get">
-                                        <ion-textarea  class="card-text" placeholder="Keywords"></ion-textarea>
-                                    </div>
-                                </ion-col>
-                            </ion-row>
-                          </ion-grid>
-                        </ion-card-content>
-                      </ion-card>
-          </ion-row>
-          <ion-row>
-              <ion-card class="inner">
-                  <ion-card-header>
-                    <ion-card-subtitle>Sub-category 2</ion-card-subtitle>
-                    <ion-card-title>Suggesting Features</ion-card-title>
-                  </ion-card-header>
-                  <ion-card-content>
-                    <ion-grid>
-                      <ion-row>
-                          <ion-col>
-                              <div class="get">
-                                  <ion-textarea class="card-text" placeholder="Keywords"></ion-textarea>
-                              </div>
-                            </ion-col>
-                            <ion-col>
-                              <div class="get">
-                                  <ion-textarea class="card-text" placeholder="Keywords"></ion-textarea>
-                              </div>
-                          </ion-col>
-                      </ion-row>
-                    </ion-grid>
-                  </ion-card-content>
-                </ion-card>
+              <ion-col size="1">Sub Category</ion-col>
+              <ion-col size="1">Discussions</ion-col>
+              <ion-col size="5">Id's</ion-col>
+              <ion-col size="5">Summary</ion-col>
             </ion-row>
-            <ion-row>
-                <ion-card class="inner">
-                    <ion-card-header>
-                      <ion-card-subtitle>Sub-category 1</ion-card-subtitle>
-                      <ion-card-title>Reporting Bugs</ion-card-title>
-                    </ion-card-header>
-                    <ion-card-content>
-                      <ion-grid>
-                        <ion-row>
-                            <ion-col>
-                                <div class="get">
-                                    <ion-textarea class="card-text" placeholder="Keywords"></ion-textarea>
-                                </div>
-                              </ion-col>
-                              <ion-col>
-                                <div class="get">
-                                    <ion-textarea class="card-text" placeholder="Keywords"></ion-textarea>
-                                </div>
-                            </ion-col>
-                        </ion-row>
-                      </ion-grid>
-                    </ion-card-content>
-                  </ion-card>
-              </ion-row>
+            <ion-row class="row" *ngFor = "let subcategory of category.keyval">
+              <ion-col size="1">
+                <p class="subc">{{subcategory.key}}</p>
+              </ion-col>
+              <ion-col size="1">
+                  <p class="number">{{subcategory.val.length}}</p>
+              </ion-col>
+              <ion-col size="5">
+                  <ion-textarea  class="keywords" readonly value={{subcategory.val}}></ion-textarea>
+                </ion-col>
+              <ion-col size="5">
+                <ion-textarea class="summary" readonly value={{subcategory.summary}}></ion-textarea>
+              </ion-col>
+            </ion-row>
           </ion-grid>
-        </ion-card-content>
-      </ion-card>
-    </ion-row>
-    <ion-row class="outer">
-        <ion-card class="outer">
-          <ion-item>
-            <ion-label class="card-topic">Network</ion-label>
-          </ion-item>
-          <ion-card-content class="outer">
-            <ion-grid>
-              <ion-row>
-                    <ion-chip color="primary">
-                        <ion-label color="primary">lag</ion-label>
-                    </ion-chip>
-                    <ion-chip color="primary">
-                        <ion-label color="primary">ping</ion-label>
-                    </ion-chip>
-                    <ion-chip color="primary">
-                        <ion-label color="primary">rubberband</ion-label>
-                    </ion-chip>
-                    <ion-chip color="primary">
-                        <ion-label color="primary">servers</ion-label>
-                    </ion-chip>
-                    <ion-chip color="primary">
-                        <ion-label color="primary">na</ion-label>
-                    </ion-chip>
-                    <ion-chip color="primary">
-                        <ion-label color="primary">eu</ion-label>
-                    </ion-chip>
-               </ion-row>
-               <ion-row>
-                      <ion-card class="inner">
-                          <ion-card-header>
-                            <ion-card-subtitle>Sub-category 1</ion-card-subtitle>
-                            <ion-card-title>Reporting Bugs</ion-card-title>
-                          </ion-card-header>
-                          <ion-card-content>
-                            <ion-grid>
-                              <ion-row>
-                                  <ion-col>
-                                      <div class="get">
-                                          <ion-textarea class="card-text" placeholder="Keywords"></ion-textarea>
-                                      </div>
-                                    </ion-col>
-                                    <ion-col>
-                                      <div class="get">
-                                          <ion-textarea class="card-text" placeholder="Keywords"></ion-textarea>
-                                      </div>
-                                  </ion-col>
-                              </ion-row>
-                            </ion-grid>
-                          </ion-card-content>
-                        </ion-card>
-            </ion-row>
-            <ion-row>
-                <ion-card class="inner">
-                    <ion-card-header>
-                      <ion-card-subtitle>Sub-category 1</ion-card-subtitle>
-                      <ion-card-title>Suggesting Features</ion-card-title>
-                    </ion-card-header>
-                    <ion-card-content>
-                      <ion-grid>
-                        <ion-row>
-                            <ion-col>
-                                <div class="get">
-                                    <ion-textarea class="card-text" placeholder="Keywords"></ion-textarea>
-                                </div>
-                              </ion-col>
-                              <ion-col>
-                                <div class="get">
-                                    <ion-textarea class="card-text" placeholder="Keywords"></ion-textarea>
-                                </div>
-                            </ion-col>
-                        </ion-row>
-                      </ion-grid>
-                    </ion-card-content>
-                  </ion-card>
-              </ion-row>
-              <ion-row>
-                  <ion-card class="inner">
-                      <ion-card-header>
-                        <ion-card-subtitle>Sub-category 1</ion-card-subtitle>
-                        <ion-card-title>Reporting Bugs</ion-card-title>
-                      </ion-card-header>
-                      <ion-card-content>
-                        <ion-grid>
-                          <ion-row>
-                              <ion-col>
-                                  <div class="get">
-                                      <ion-textarea class="card-text" placeholder="Keywords"></ion-textarea>
-                                  </div>
-                                </ion-col>
-                                <ion-col>
-                                  <div class="get">
-                                      <ion-textarea class="card-text" placeholder="Keywords"></ion-textarea>
-                                  </div>
-                              </ion-col>
-                          </ion-row>
-                        </ion-grid>
-                      </ion-card-content>
-                    </ion-card>
-                </ion-row>
-            </ion-grid>
-          </ion-card-content>
-        </ion-card>
-      </ion-row>
-  </ion-grid> -->
+        </ion-row>
+  </div>
+ </ion-grid>
 </ion-content>

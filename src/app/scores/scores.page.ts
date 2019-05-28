@@ -14,7 +14,7 @@ export class ScoresPage implements OnInit, AfterViewInit {
   chartIds : any;
   scoreData: any;
   topics: any;
-  constructor(private http: HttpServiceService) { 
+  constructor(private http: HttpServiceService,public router:Router) { 
   }
 
   ngOnInit() {
@@ -78,7 +78,12 @@ public crateBarCharts(cloudData,topics){
     this.chartSet.push({chart:chart,cid:chartId});
     ind++; 
   });
+}
 
+public proceed(){
+  this.http.callResults(()=>{
+    this.router.navigateByUrl('/results')
+  })
 }
 
 }

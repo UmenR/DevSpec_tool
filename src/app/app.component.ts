@@ -27,7 +27,7 @@ export class AppComponent {
     },
     {
       title: 'Results',
-      url: '/list',
+      url: '/results',
       icon: 'list-box'
     }
   ];

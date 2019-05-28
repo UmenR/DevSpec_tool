@@ -1,55 +1,79 @@
-::-webkit-scrollbar {
-  display: none;
-}
-ion-grid.inner{
-  overflow:auto;
-}
-ion-grid.grid{
-    margin: auto;
-    width: 50%;
-    //border: 3px solid green;
-    padding: 50px;
-  }
-
-ion-row.outer{
-  height: 750px;
-  width: 800px;
-  margin-left: -200px;
-  overflow: auto;
-  
+::-webkit-scrollbar { 
+  display: none
 }
 
-ion-card.outer{
-  width:900px;
-  // overflow: auto;
+ion-toolbar.header{
+  --background: #3880ff;
 }
-  ion-card{
-    width:900px;
+ion-title.title{
+  color: white;
+}
+
+// ion-grid{
+//   background:#eff2fd;
+//   border:  solid black;
+//   }
+
+.number {
+   margin: 0;
+   position: absolute;               /* 2 */
+   top: 50%;                         /* 3 */
+   transform: translate(0, -50%);
+   text-align: right;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.subc{
+   margin: 0;
+   position: absolute;               /* 2 */
+   top: 50%;                         /* 3 */
+   transform: translate(0, -50%);
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+ion-row{
    
   }
-  ion-card.inner{
-    height: 400px;
-    width:700px;
-  }
 
-  ion-textarea.card-text{
-    height: 250px;
-    border-style: solid; 
-  }
+.outerrow {
+  // margin-bottom: 3px
+}
 
-  div.get{
-    display:block;
-    overflow:auto;
-  }
+.row{
+  height: 210px;
+  background:#eff2fd;
+  border:  solid black;
+  border-width: 1px;
+  margin-bottom: 1px
+}
+ion-textarea.keywords{
+  height: 190px;
+  // border-style: solid;
+  // border-color: darkgrey;
+  // border-width: 1px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+ion-textarea.summary{
+  height: 190px;
+  // border-style: solid;
+  // border-color: darkgrey;
+  // border-width: 1px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
 
-  ion-toolbar.header{
-    --background: #3880ff;
-  }
-  ion-title.title{
-    color: white;
-  }
-  ion-label.card-topic{
-    color: #3880ff;
-    font-size: 3em
 
-  }
+ h4 {
+  text-align: center;
+  font-size: 30px;
+  color: #3880ff;
+}
+
+.keywords {
+  height: 50px;
+}
+
+.summary {
+  height: 50px;
+}
+
+ 
