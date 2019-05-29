@@ -5,6 +5,7 @@
 </ion-header>
 
 <ion-content>
+  <div [className]="isLoading ? 'loader loader-border is-active' : 'loader loader-border'" data-text="Custom text"></div>
   <div id="chartContainer" style="height: 370px; width: 100%;"></div>
   <div id="chart0" style="height: 370px; width: 100%;" *ngIf="this.scoreData.wordclouds.length >= 1">
   </div>

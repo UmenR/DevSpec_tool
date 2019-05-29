@@ -20,6 +20,8 @@ export class AnalyzePage implements OnInit {
   gridRows = [];
   inputsArray = [];
   elimentsPerRow = 3;
+  isLoading: boolean = false;
+  numDisc = 2;
   
 
 
@@ -115,14 +117,16 @@ export class AnalyzePage implements OnInit {
   }
 
 analyze(){
+  this.isLoading = true;
   // console.log(this.inputsArray)
-  let parameters =this.prepareResults(this.beforedate,this.afterdate,this.gridRows)
+  let parameters =this.prepareResults(this.beforedate,this.afterdate,this.gridRows,this.numDisc)
   this.http.callAnalyze((res)=>{
+    this.isLoading = false;
     this.router.navigate(['/scores'])
   },parameters)
 }
 
-prepareResults(start,end,grows): any {
+prepareResults(start,end,grows,num): any {
   let localeOffset = 19800;
   let startTime = parseInt(start) + localeOffset;
   let endTime = parseInt(end) + localeOffset;
@@ -142,7 +146,8 @@ prepareResults(start,end,grows): any {
     "start":startTime,
     "end":endTime,
     "topics":noOfTopics,
-    "keywords": JSON.stringify(topicObj)
+    "keywords": JSON.stringify(topicObj),
+    "discussions":num
   }
 }
 }

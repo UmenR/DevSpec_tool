@@ -10,6 +10,7 @@ import {HttpServiceService} from '../services/http-service.service';
 })
 export class HomePage {
   game: string = "PUBATTLEGROUNDS";
+  isLoading: boolean = false;
   idset = [];
   constructor(public modalCtrl: ModalController, private http: HttpServiceService, public router:Router) {}
 
@@ -18,9 +19,11 @@ export class HomePage {
   }
 
   clickProceed(){
+    this.isLoading = true;
     let that = this.router;
     let parameters = {"game":this.game}
     this.http.callW2W((that)=>{
+      this.isLoading = false;
       this.router.navigateByUrl('/analyze')
     },parameters)
   }

@@ -14,6 +14,7 @@ export class ScoresPage implements OnInit, AfterViewInit {
   chartIds : any;
   scoreData: any;
   topics: any;
+  isLoading: boolean = false;
   constructor(private http: HttpServiceService,public router:Router) { 
   }
 
@@ -81,7 +82,9 @@ public crateBarCharts(cloudData,topics){
 }
 
 public proceed(){
+  this.isLoading = true;
   this.http.callResults(()=>{
+    this.isLoading = false;
     this.router.navigateByUrl('/results')
   })
 }
