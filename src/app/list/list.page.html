@@ -39,4 +39,7 @@
         </ion-row>
   </div>
  </ion-grid>
+ <div style="text-align: center">
+  <ion-button [swal]="['Success!', 'JSON object has been copied to the clipboard', 'success']" (click)="copyMessage(this.jsonData)">Copy</ion-button>
+</div>
 </ion-content>

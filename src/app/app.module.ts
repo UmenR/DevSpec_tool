@@ -7,6 +7,7 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { HttpClientModule } from  '@angular/common/http';
 import { TagCloudModule } from 'angular-tag-cloud-module';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -19,6 +20,7 @@ import {HttpServiceService} from './services/http-service.service';
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
+    SweetAlert2Module.forRoot(),
     Ionic4DatepickerModule,
     AppRoutingModule,
     TagCloudModule,
