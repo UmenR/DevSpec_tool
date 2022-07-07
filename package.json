@@ -28,7 +28,7 @@
     "@sweetalert2/ngx-sweetalert2": "^5.0.3",
     "angular-tag-cloud-module": "^3.7.0",
     "core-js": "^2.5.4",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "rxjs": "~6.5.1",
     "sweetalert2": "^8.11.6",
     "tslib": "^1.9.0",
